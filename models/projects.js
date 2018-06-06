@@ -5,18 +5,19 @@ let projectSchema = new Schema({
     headline : {
         type : String,
         required : [true, "headline is required field"],
+        unique : true
     },
     desc : {
         type: String,
         maxlength: 200
     },
-    readme : {
-        type: String
-    },
     githubLink : {
         type : String,
     },
     herokuLink : {
+        type : String
+    },
+    thumbnail : {
         type : String
     }
 
