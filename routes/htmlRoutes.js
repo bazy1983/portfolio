@@ -3,7 +3,10 @@ const router = express.Router();
 const db = require("../models/")
 
 router.get("/", function(req, res){
-    res.send("okay")
+    db.project.find({})
+    .then(function(results){
+        res.render("index", {projects : results})
+    })
 })
 
 router.get("/add-project", function(req, res){

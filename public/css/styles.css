@@ -1,0 +1,215 @@
+/* Ensure elements are hidden while ScrollEntrance is loading */
+[data-entrance] { visibility: hidden; }
+
+:root {
+    --theme-color: #06a763;
+    --theme-text-color: #fff;   
+}
+
+body {
+    background: #f5f5f5;
+}
+
+
+.bgImage {
+    width: 100vw;
+    height: 400px;
+    background-image: url("../media/internet_blur.jpg");
+    background-size:cover;
+
+}
+
+.container {
+    position: relative;
+    top: -300px;
+}
+
+.wrapper {
+    width: 90%;
+}
+/* Profile start */
+.profile {
+    height: 350px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px #aaa;
+}
+
+.profile .info {
+    position: relative;
+    height: 350px;
+    width: 60%;
+    background: var(--theme-color);
+    float: left;
+    color: var(--theme-text-color);
+    padding: 30px;
+}
+
+.profile .info:after{
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: -52px;
+    border-left: 50px solid var(--theme-color);
+    border-bottom: 350px solid var(--theme-color);
+    border-right: 50px solid transparent;
+}
+
+.profile .info h1, .profile .info p {
+    text-shadow: 3px 3px 10px #000;
+}
+
+.profile .info h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+}
+
+.profile .info a{
+    font-family: 'Raleway', sans-serif;
+    color: var(--theme-text-color);
+    text-decoration-line: none;
+}
+
+.profile .info i{
+    transition: 0.5s;
+    margin: 0 5px;
+}
+
+.profile .info i:hover{
+    transform: scale(1.5);
+}
+
+.fa-github-square{
+    color: #333;
+}
+
+.fa-linkedin {
+    color: #0077b5;
+}
+
+.fa-stack-overflow{
+    color: #f48024;
+}
+
+.profile .photo {
+    width: 40%;
+    float: right;
+}
+
+.profile .photo img {
+    width: 100%;
+}
+
+/* profile ends */
+
+/* bio starts */
+
+.bio {
+    min-height: 200px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px #aaa;
+    background: var(--theme-text-color);
+}
+
+/*This is the initial state before animating */
+[data-entrance="fadeIn-zoom-up"]{
+	transform: scale(0.8) translateY(100px);
+    opacity: 0;
+}
+/*This is the state after animating */
+[data-entrance="fadeIn-zoom-up"].has-animated{
+	transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* bio ends */
+
+/* Skill starts */
+
+.skill-img span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.skill-img .image {
+    position: relative;
+    top: -10px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0px 2px 10px #aaa;
+}
+
+.skill-img .image img {
+    width: 50px;
+}
+
+.skill {
+    min-height: 200px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px #aaa;
+    background: var(--theme-color);
+    width: 100%;
+    color: var(--theme-text-color);
+    margin-left: 0px;
+}
+
+.skill .h4 {
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 3px 3px 10px #000;
+}
+
+.skill .progress {
+    position: relative;
+    top: -14px;
+    margin-bottom: 10px;
+}
+/* skill ends */
+
+/* testimonial start */
+.testimonial {
+    min-height: 200px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px #aaa;
+    background: var(--theme-color);
+    width: 100%;
+    color: var(--theme-text-color);
+    padding: 20px 10px;
+    transition: 0.5s;
+}
+
+.testimonial-img span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.testimonial-img .image {
+    position: relative;
+    top: -10px;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: 0px 2px 10px #aaa;
+}
+
+.testimonial-img .image img {
+    width: 50px;
+}
+
+.testimonial .person_img {
+    width:120px;
+    height: 120px;
+    border-radius: 60px;
+}
+
+.carousel-indicators {
+    bottom: -15px!important;
+}
+
+.person_img {
+    box-shadow: 0px 2px 10px #333;
+}
+/* testimonial end */

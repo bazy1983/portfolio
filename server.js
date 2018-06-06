@@ -15,15 +15,16 @@ app.use(express.static("public"))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // parse application/json
 app.use(bodyParser.json());
 
 app.use(htmlRoutes)
 app.use("/api", apiRoutes);
 
+//HANDLEBARS
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+//exphbs.registerPartial('nav')
 
 const port = process.env.PORT || 3000;
 
