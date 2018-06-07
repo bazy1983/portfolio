@@ -15,8 +15,15 @@
     <br>
     <input type="text" id = "addHeroku">
     <br>
-    <label for="addImage">Add Image:</label>
-    <input type="file" id = "addImg">
     <button id="submit">Add Project</button>
     <br>
+</form>
+
+<form action="api/upload" method="POST" enctype="multipart/form-data" id = "uploader">
+    <label for="addImage">Add Image:</label>
+    <br>
+    <input type="file" name = "file" id="file">
+    <br>
+    <button id = "upload" type="submit" value="submit">upload</button>
+
 </form>

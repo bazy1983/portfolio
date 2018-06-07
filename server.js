@@ -2,21 +2,28 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
 
-const mongodbLink = process.env.MONGODB_URI || 'mongodb://localhost/projectdb'
-mongoose.connect(mongodbLink);
 
+// const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/projectdb'
+// module.exports = mongoURI;
+// mongoose.connect(mongoURI)
+
+//routes
 const htmlRoutes= require("./routes/htmlRoutes");
 const apiRoutes = require("./routes/apiRoutes");
 
 const app = express();
 
+//Middleware
 app.use(express.static("public"))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(methodOverride("_method"))
 
 app.use(htmlRoutes)
 app.use("/api", apiRoutes);
@@ -31,3 +38,4 @@ const port = process.env.PORT || 3000;
 app.listen(port, function(){
     console.log("app is running");
 })
+
