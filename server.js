@@ -12,6 +12,7 @@ const methodOverride = require("method-override");
 //routes
 const htmlRoutes= require("./routes/htmlRoutes");
 const apiRoutes = require("./routes/apiRoutes");
+const fileRoutes = require("./routes/fileRoutes");
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(methodOverride("_method"))
 
 app.use(htmlRoutes)
 app.use("/api", apiRoutes);
+app.use(fileRoutes)
 
 //HANDLEBARS
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));

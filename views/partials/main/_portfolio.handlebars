@@ -1,0 +1,24 @@
+<div>
+    <br>
+    <div class="testimonial-img text-center my-3">
+        <div class="image">
+            <img src="./media/safe.png" alt="portfolio">
+        </div>
+        <span> Portfolio</span>
+        <div class="row">
+            {{#each projects}}
+            <div class="col-md-4 col-sm-12 portfolioBox my-2">
+                <div class="imgContent">
+                    <img class="portfolioImg" src="image/{{imgName}}" alt="{{headline}}">
+                    <div class="textContent">
+                        <h2>{{headline}}</h2>
+                        <p>{{desc}}</p>
+                        <p>{{higtubLink}}</p>
+                        <p>{{herokuLink}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

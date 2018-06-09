@@ -1,22 +1,32 @@
-$(document).ready(function(){
-    //click to add new project
-    $("#submit").on("click", function(e){
+$(document).ready(function () {
+
+    $("#project").on("submit", function (e) {
         e.preventDefault();
-        let newProject = {
-            headline : $("#addHeadline").val().trim(),
-            desc : $("#addDesc").val().trim(),
-            githubLink : $("#addGithub").val().trim(),
-            herokuLink : $("#addHeroku").val().trim()
-        }
-        //check for empty entries
-        if (newProject.headline && newProject.desc){
-            console.log(newProject)
-            $.post("/api/addProject", newProject, function(data){
-                console.log(data)
+        let headline = $("#addHeadline").val().trim(),
+            desc = $("#addDesc").val().trim(),
+            githubLink = $("#addGithub").val().trim(),
+            herokuLink = $("#addHeroku").val().trim();
+        console.log(headline, desc, githubLink, herokuLink)
+        let method = $(this).attr("method");
+        let url = $(this).attr("action");
+        let data = new FormData(this);
+        data.append("headline", headline);
+        data.append("desc", desc);
+        data.append("githubLink", githubLink);
+        data.append("herokuLink", herokuLink);
+        $.ajax({
+            url: url,
+            type: method,
+            data: data,
+            contentType: false,
+            cache: false,
+            processData: false
+        })
+            .done(function () {
+                console.log("all good!")
             })
-        }
     })
 
-    
-    
+
+
 })

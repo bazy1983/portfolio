@@ -17,7 +17,7 @@ let projectSchema = new Schema({
     herokuLink : {
         type : String
     },
-    thumbnail : {
+    imgName : {
         type : String
     }
 

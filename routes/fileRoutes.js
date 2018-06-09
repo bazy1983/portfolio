@@ -50,48 +50,41 @@ const upload = multer({ storage });
 
 
 //Routes
-router.post("/upload", upload.single("file"), function (req, res) {
-  //console.log(req.file)
-  res.json(req.file)
-})
 
-router.post("/addProject", function (req, res) {
-  db.project.create(req.body)
-    .then(function (results) {
-      res.send(results)
+router.post("/add-new-project", upload.single("file"), function(req, res){
+    let myProject = req.body;
+    myProject.imgName = req.file.filename
+    db.project.create(myProject)
+    .then(function(){
+        res.send("okay")
     })
-    .catch(function (err) {
-      console.log("error while adding new project");
-      console.log(err);
-      res.status(400).end();
+    .catch(function(err){
+        console.log(err)
+        res.status(500).json({err : "some error"})
     })
 })
 
-router.get("/files", function (req, res) {
-  gfs.files.find().toArray(function (err, files) {
-    if (!files || files.length === 0) {
-      return res.status(404).json({ err: "not found" })
-    }
-    return res.send(files)
+router.get("/files", function(req, res){
+  db.project.find({})
+  .then(function(results){
+    res.render("images", {
+      layout : "addProject.handlebars",
+      projects : results
+    })
   })
 })
 
-router.get("/files/:filename", function (req, res) {
-  gfs.files.findOne({ filename: req.params.filename }, function (err, file) {
-    if (!file || file.length === 0) {
-      return res.status(404).json({ err: "not found" })
-    }
-    return res.json(file)
-  })
-})
 
+
+
+//this route is important to read file stream
 router.get("/image/:filename", function (req, res) {
   gfs.files.findOne({ filename: req.params.filename }, function (err, file) {
     if (!file || file.length === 0) {
       return res.status(404).json({ err: "not found" })
     }
     if (file.contentType === "image/jpeg" || file.contentType === "image/png" || file.contentType === "image/gif") {
-      //read output to browser
+
       const readstream = gfs.createReadStream(file.filename);
       readstream.pipe(res);
     } else {
@@ -100,6 +93,8 @@ router.get("/image/:filename", function (req, res) {
     
   })
 })
+
+
 
 
 

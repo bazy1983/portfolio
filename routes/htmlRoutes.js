@@ -6,7 +6,6 @@ const db = require("../models/")
 router.get("/", function(req, res){
     db.project.find({})
     .then(function(results){
-        console.log(results)
         res.render("index", {projects : results})
     })
 })
