@@ -15,12 +15,14 @@
                             <h2 class = "translate">{{headline}}</h2>
                             <p class = "translate">{{desc}}</p>
 
-                            <a href="{{githubLink}}">
-                                <img class = "translate" src="./media/github.png" alt="github" width="100px" height="30px" />
+                            <a href="{{githubLink}}" target="_blank">
+                                <img class = "translate" src="./media/github.png" alt="github" width="100px" height="30px"/>
                             </a>
-                            <a href="{{herokuLink}}">
+                            {{#if herokuLink}}
+                            <a href="{{herokuLink}}" target="_blank">
                                 <img class = "translate" src="./media/heroku.png" alt="heroku" width="100px" height="30px" />
                             </a>
+                            {{/if}}
 
                         </div>
                     </div>
