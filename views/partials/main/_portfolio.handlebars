@@ -11,10 +11,18 @@
                 <div class="imgContent">
                     <img class="portfolioImg" src="image/{{imgName}}" alt="{{headline}}">
                     <div class="textContent">
-                        <h2>{{headline}}</h2>
-                        <p>{{desc}}</p>
-                        <p>{{higtubLink}}</p>
-                        <p>{{herokuLink}}</p>
+                        <div class="text">
+                            <h2 class = "translate">{{headline}}</h2>
+                            <p class = "translate">{{desc}}</p>
+
+                            <a href="{{githubLink}}">
+                                <img class = "translate" src="./media/github.png" alt="github" width="100px" height="30px" />
+                            </a>
+                            <a href="{{herokuLink}}">
+                                <img class = "translate" src="./media/heroku.png" alt="heroku" width="100px" height="30px" />
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>

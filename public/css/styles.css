@@ -121,6 +121,17 @@ body {
     opacity: 1;
 }
 
+.bio button {
+    width: 200px;
+    background: #06a763;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px #333;
+    border: 0px;
+    margin: 0px 10px;
+    color: #fff;
+    height: 30px;
+}
+
 /* bio ends */
 
 /* Skill starts */
@@ -219,12 +230,23 @@ body {
     position: relative;
     
 }
-.portfolioBox:hover .imgContent img{
+.portfolioBox:hover .imgContent .portfolioImg{
     transform: scale(1.5)
 }
 .portfolioBox:hover .textContent{
-    background: rgba(0, 0, 0, 0.356);
+    background: rgba(0, 0, 0, 0.473);
+    color: #1976d2;
 }
+
+.translate {
+    transform: translateY(290px);
+    transition: 0.5s
+}
+
+.portfolioBox:hover .translate{
+    transform: translateY(120px)
+}
+
 
 .imgContent {
     position: relative;
@@ -242,9 +264,10 @@ body {
     left: 0px;
     transition: 0.6s;
     overflow: hidden;
+    color: #FFF
 }
 
-.imgContent img{
+.imgContent .portfolioImg{
     width: 100%;
     transition: 0.6s;
 }
