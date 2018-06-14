@@ -32,6 +32,7 @@ body {
     height: 350px;
     overflow: hidden;
     box-shadow: 0px 2px 10px #aaa;
+    position: relative;
 }
 
 .profile .info {
@@ -97,7 +98,9 @@ body {
 
 .profile .photo img {
     width: 100%;
+    object-fit: cover;
 }
+
 
 /* profile ends */
 
@@ -273,3 +276,154 @@ body {
 }
 
 /* portfolio end */
+
+
+/* responsive */
+@media screen and (max-width : 575px){
+    .profile .info h1{
+        font-size: 24px;
+        margin-top: 25px;
+    }
+
+    .lead {
+        font-size: 1.15rem;
+    }
+
+    .profile {
+        overflow: visible;
+    }
+
+    .profile .info {
+        width: 100%;
+        float: none;
+    }
+
+    .profile .info .h2 {
+        text-align: center;
+        transform: translateX(-10px);
+    }
+    
+    .profile .info:after{
+        position: absolute;
+        content: "";
+        right: 0px;
+        border: 0px;
+        
+    }
+
+    .profile .photo {
+        float: none;
+        position: absolute;
+        top: -46px;
+        right: 34%;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 5px solid #06a763;
+    }
+
+    .translate {
+        transform: translateY(388px);
+    }
+
+    .portfolioBox:hover .translate {
+        transform: translateY(140px);
+    }
+}
+
+@media screen and (min-width : 576px) and (max-width : 766px){
+    .profile .info h1{
+        font-size: 28px;
+        margin-top : 10px;
+    }
+    .lead {
+        font-size: 1.25rem;
+    }
+
+    .profile {
+        overflow: visible;
+    }
+
+    .profile .info {
+        width: 100%;
+        float: none;
+    }
+
+   
+    .profile .info:after{
+        position: absolute;
+        content: "";
+        right: 0px;
+        border: 0px;
+        
+    }
+
+    .profile .photo {
+        float: none;
+        position: absolute;
+        top: -90px;
+        right: 0px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 5px solid #06a763;
+    }
+
+    .translate {
+        transform: translateY(450px);
+    }
+
+    .portfolioBox:hover .translate {
+        transform: translateY(195px);
+    }
+}
+
+@media screen and (min-width : 767px) and (max-width : 990px){
+    .profile {
+        overflow: visible;
+    }
+
+    .profile .info {
+        width: 100%;
+        float: none;
+    }
+
+   
+    .profile .info:after{
+        position: absolute;
+        content: "";
+        right: 0px;
+        border: 0px;
+        
+    }
+    
+    .profile .photo {
+        float: none;
+        position: absolute;
+        top: -90px;
+        right: 0px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        overflow: hidden;
+        border: 5px solid #06a763;
+    }
+
+    .translate {
+        transform: translateY(270px);
+    }
+
+    .portfolioBox:hover .translate {
+        transform: translateY(110px);
+    }
+
+}
+
+@media screen and (min-width : 991px){
+    .translate {
+        transform: translateY(233px);
+    }
+    
+}
