@@ -239,6 +239,7 @@ body {
 .portfolioBox:hover .textContent{
     background: rgba(0, 0, 0, 0.473);
     color: #1976d2;
+    filter: drop-shadow(0px 0px 5px #fff)
 }
 
 .translate {
@@ -247,7 +248,7 @@ body {
 }
 
 .portfolioBox:hover .translate{
-    transform: translateY(120px)
+    transform: translateY(120px);
 }
 
 
@@ -267,7 +268,8 @@ body {
     left: 0px;
     transition: 0.6s;
     overflow: hidden;
-    color: #FFF
+    color: #FFF;
+    filter: drop-shadow(0px 0px 5px #000)
 }
 
 .imgContent .portfolioImg{
@@ -421,7 +423,7 @@ body {
 
 }
 
-@media screen and (min-width : 991px){
+@media screen and (min-width : 991px) and (max-width :1199px){
     .translate {
         transform: translateY(233px);
     }
