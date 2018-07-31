@@ -34,10 +34,15 @@ body {
 
 }
 
+/* .shiftUp {
+    position: absolute;
+    top: -300px;
+} */
+
 .container {
-    /* position: relative;
-    top: -300px; */
-    /* transform: translateY(-300px) */
+    position: relative;
+    top: -300px;
+    margin-bottom: -300px;
 }
 
 .wrapper {
