@@ -58,7 +58,7 @@ body {
 
 .profile .info {
     position: relative;
-    height: 350px;
+    min-height: 350px;
     width: 60%;
     background: var(--theme-color);
     float: left;
@@ -335,6 +335,7 @@ footer{
     .profile .info {
         width: 100%;
         float: none;
+        padding: 30px 10px;
     }
 
     .profile .info .h2 {
