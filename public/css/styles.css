@@ -2,7 +2,7 @@
 [data-entrance] { visibility: hidden; }
 
 :root {
-    --theme-color: #06a763;
+    --theme-color: #02567c;
     --theme-text-color: #fff;   
 }
 
@@ -13,7 +13,7 @@ body {
 .cvBtn {
     width: 200px;
     padding: 10px;
-    background: #06a763;
+    background: var(--theme-color);
     display: inline-block;
     box-shadow: 2px 2px 5px #aaa;
     color: #fff;
@@ -147,7 +147,7 @@ body {
 
 .bio button {
     width: 200px;
-    background: #06a763;
+    background: var(--theme-color);
     border-radius: 2px;
     box-shadow: 0px 2px 5px #333;
     border: 0px;
@@ -360,7 +360,7 @@ footer{
         height: 100px;
         border-radius: 100%;
         overflow: hidden;
-        border: 5px solid #06a763;
+        border: 5px solid var(--theme-color);
     }
 
     .translate {
@@ -408,7 +408,7 @@ footer{
         height: 200px;
         border-radius: 100%;
         overflow: hidden;
-        border: 5px solid #06a763;
+        border: 5px solid var(--theme-color);
     }
 
     .translate {
@@ -418,6 +418,37 @@ footer{
     .portfolioBox:hover .translate {
         transform: translateY(195px);
     }
+}
+
+.colorBox{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    top: calc(50vh - 100px);
+    right: 0px;
+    border : 1px solid #000;
+    background: #f5f5f5;
+}
+
+.colorBox .BoxHead {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    overflow: auto;
+}
+
+.colorBox .BoxHead i{
+    animation: rotation 5s linear infinite
+}
+
+@keyframes rotation {
+    from {transform : rotate(0deg)}
+    to {transform: rotate(359deg)}
+}
+
+.colorBox .BoxHead .settingText{
+    display: block;
+    transform: rotate(90deg) translate(90px, 33px)
 }
 
 @media screen and (min-width : 767px) and (max-width : 990px){
@@ -448,7 +479,7 @@ footer{
         height: 200px;
         border-radius: 100%;
         overflow: hidden;
-        border: 5px solid #06a763;
+        border: 5px solid var(--theme-color);
     }
 
     .translate {
