@@ -7,6 +7,7 @@ const grid = require("gridfs-stream");
 const GridFsStorage = require("multer-gridfs-storage");
 const crypto = require("crypto");
 const path = require("path");
+const mailClient = require("../controller/emailControl")
 
 // const mongoURI = require("../server")
 mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/projectdb'
@@ -101,6 +102,10 @@ router.get("/image/:filename", function (req, res) {
   })
 })
 
+router.post("/contact", (req, res)=>{
+  let {name, email, message} = req.body;
+  mailClient(name, email, message, res)
+})
 
 
 

@@ -498,3 +498,11 @@ footer{
     }
     
 }
+
+/* contact box */
+#contact {
+    background: #fff;
+    margin-top: 25px;
+    padding: 5px 10px;
+    box-shadow: 0px 2px 10px #aaa;
+}
